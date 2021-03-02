@@ -78,15 +78,17 @@ class CircularLinkedListWithLastTest {
         assertEquals("2", circularLinkedList.getLast().getNext().getData());
 
         // delete remaining all
+        assertTrue(circularLinkedList.contains("2"));
         boolean result6 = circularLinkedList.delete(new CircularLinkedListWithLast.Node("2"));
         assertTrue(result6);
-        assertFalse(circularLinkedList.getDataInList().contains("2"));
+        assertFalse(circularLinkedList.contains("2"));
         assertEquals("5", circularLinkedList.getLast().getData());
 
         // delete remaining all
+        assertTrue(circularLinkedList.contains("5"));
         boolean result7 = circularLinkedList.delete(new CircularLinkedListWithLast.Node("5"));
         assertTrue(result7);
-        assertFalse(circularLinkedList.getDataInList().contains("5"));
+        assertFalse(circularLinkedList.contains("5"));
         assertNull(circularLinkedList.getLast());
 
     }

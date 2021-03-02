@@ -92,32 +92,45 @@ public class CircularLinkedListWithLast<T> {
     }
 
     public boolean delete(T target){
-        if(target != null && last != null){
-            if(last.data == target){
-                last = last.next;
-                return true;
-            }
-            Node start = last;
+        if(target == null){
+            return false;
+        }
+        return delete(new Node(target));
+    }
 
-            while(last.next.data != target && last.next != start){
+    public Node find(T data){
+        Node current = last;
+        if(last != null) {
+            do {
+                if(current.data == data){
+                    return current;
+                }
+                current = current.next;
+            } while (current != last);
+        }
+        return null;
+    }
 
-            }
+    public boolean contains(T data){
+        Node current = last;
+        if(last != null) {
+            do {
+                if(current.data == data){
+                    return true;
+                }
+                current = current.next;
+            } while (current != last);
         }
         return false;
     }
 
-    public void traverse(){
-
-    }
-
     public void print() {
-        Node start = last;
         Node current = last;
         if(last != null) {
             do {
                 System.out.println(current);
                 current = current.next;
-            } while (current != start);
+            } while (current != last);
         }
     }
 
