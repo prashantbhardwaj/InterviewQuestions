@@ -34,8 +34,8 @@ public class Q128LongestConsecutiveSequence {
 
     public static void main(String[] args) {
         System.out.println("I: 100,4,200,1,3,2");
-        //int result1 = longestConsecutive(100,4,200,1,3,2);
-        //System.out.println(result1);
+        int result1 = longestConsecutive(100,4,200,1,3,2);
+        System.out.println(result1);
 
         System.out.println("I: 0,3,7,2,5,8,4,6,0,1");
         int result2 = longestConsecutive(0,3,7,2,5,8,4,6,0,1);
