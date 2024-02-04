@@ -18,7 +18,7 @@ Explanation: The longest consecutive elements sequence is [1, 2, 3, 4]. Therefor
 
 Example 2:
 
-Input: nums = [0,3,7,2,5,8,4,6,0,1]
+Input: nums = [0,3,7,2,5,8,4,6,0,1] --> same number can repeat but count all the occurrences of same number as 1
 Output: 9
 
 
@@ -27,7 +27,6 @@ Constraints:
 
     0 <= nums.length <= 105
     -109 <= nums[i] <= 109
-
 
  */
 public class Q128LongestConsecutiveSequence {
