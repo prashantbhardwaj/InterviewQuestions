@@ -1,5 +1,7 @@
 package person.prashant.questions.portal.leetcode;
 
+import person.prashant.utility.DoubleInputSolutionTester;
+
 import java.util.Arrays;
 import java.util.stream.Collectors;
 
@@ -47,6 +49,11 @@ public class Q242ValidAnagram {
         System.out.println("I: peek, keep");
         boolean result3 = isAnagram("peek", "keep");
         System.out.println(result3);
+
+        DoubleInputSolutionTester.<String, String, Boolean>startTest("Example 1")
+                .callMethod(Q242ValidAnagram::isAnagram)
+                .withInput("peek", "keep")
+                .andExpect(true);
     }
 
     public static boolean isAnagram(String s, String t) {
