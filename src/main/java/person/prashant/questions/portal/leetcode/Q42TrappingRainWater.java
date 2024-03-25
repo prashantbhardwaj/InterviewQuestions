@@ -32,7 +32,7 @@ import java.util.function.Function;
 public class Q42TrappingRainWater {
 
     public static void main(String[] args) {
-        SolutionTester.onlyTest("Example 9");
+        SolutionTester.onlyTest("Example 10");
 
         SolutionTester.<int[], Integer>startTest("Example 1.0")
                 .callMethod(Q42TrappingRainWater::trap)
@@ -92,6 +92,11 @@ public class Q42TrappingRainWater {
         SolutionTester.<int[], Integer>startTest("Example 9")
                 .callMethod(Q42TrappingRainWater::trap)
                 .withInput(new int[]{0,7,1,4,6})
+                .andExpect(7);
+
+        SolutionTester.<int[], Integer>startTest("Example 10")
+                .callMethod(Q42TrappingRainWater::trap)
+                .withInput(new int[]{0,6,1,4,7})
                 .andExpect(7);
 
     }

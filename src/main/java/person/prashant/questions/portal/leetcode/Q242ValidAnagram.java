@@ -38,19 +38,18 @@ public class Q242ValidAnagram {
 
 
     public static void main(String[] args) {
-        System.out.println("I: anagram, nagaram");
-        boolean result1 = isAnagram("anagram", "nagaram");
-        System.out.println(result1);
-
-        System.out.println("I: rat, car");
-        boolean result2 = isAnagram("rat", "car");
-        System.out.println(result2);
-
-        System.out.println("I: peek, keep");
-        boolean result3 = isAnagram("peek", "keep");
-        System.out.println(result3);
 
         DoubleInputSolutionTester.<String, String, Boolean>startTest("Example 1")
+                .callMethod(Q242ValidAnagram::isAnagram)
+                .withInput("anagram", "nagaram")
+                .andExpect(true);
+
+        DoubleInputSolutionTester.<String, String, Boolean>startTest("Example 2")
+                .callMethod(Q242ValidAnagram::isAnagram)
+                .withInput("rat", "car")
+                .andExpect(false);
+
+        DoubleInputSolutionTester.<String, String, Boolean>startTest("Example 3")
                 .callMethod(Q242ValidAnagram::isAnagram)
                 .withInput("peek", "keep")
                 .andExpect(true);
