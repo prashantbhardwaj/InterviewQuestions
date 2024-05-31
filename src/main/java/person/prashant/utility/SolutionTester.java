@@ -45,7 +45,7 @@ public class SolutionTester <Input, Output>{
 
     public void andExpect(Output expectedOutput){
         String newName = name == null ? "" : "[" + name + "]" + " = ";
-        if((!testFew|| testFew && Arrays.asList(testsToBeTested).contains(name))) {
+        if((!testFew || testFew && Arrays.asList(testsToBeTested).contains(name))) {
             Output actualOutput = this.solution.apply(this.input);
             if (!expectedOutput.equals(actualOutput)) {
                 System.out.println(newName + "test failed");

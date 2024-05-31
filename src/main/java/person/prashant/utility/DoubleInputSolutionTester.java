@@ -52,7 +52,7 @@ public class DoubleInputSolutionTester<Input1, Input2, Output>{
 
     public void andExpect(Output expectedOutput){
         String newName = name == null ? "" : "[" + name + "]" + " = ";
-        if(testFew && Arrays.asList(testsToBeTested).contains(name)) {
+        if((!testFew || testFew && Arrays.asList(testsToBeTested).contains(name))) {
             Output actualOutput = this.solution.apply(this.input1, this.input2);
             if (!expectedOutput.equals(actualOutput)) {
                 System.out.println(newName + "test failed");
