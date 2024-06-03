@@ -1,9 +1,11 @@
 package person.prashant.questions.basic;
 
+import person.prashant.utility.SolutionTester;
+
 import java.util.Arrays;
 import java.util.function.Function;
 import java.util.stream.Collectors;
-import java.util.stream.LongStream;
+
 
 public class SortOnCount {
 
@@ -23,24 +25,23 @@ public class SortOnCount {
         System.out.println("I: 1,2,3,4,4,5,5,6,7,7,7,8");
         sortOnCountThenSortOnGivenNumber(1,2,3,4,4,5,5,6,7,7,7,8);
         System.out.println();
+
+        SolutionTester.<int[], String>startTest("Example 1.2")
+                .callMethod(SortOnCount::sortOnCountThenSortOnGivenNumber)
+                .withInput(new int[]{1,2,3,4,4,5,5,6,7,7,7,8})
+                .andExpect("7,7,7,4,4,5,5,1,2,3,6,8");
     }
 
-    private static void sortOnCountThenSortOnGivenNumber(int... input){
-        System.out.print("O: ");
-        String val = Arrays.stream(input)
+    private static String sortOnCountThenSortOnGivenNumber(int... input){
+        return Arrays.stream(input)
                 .boxed()
-                .collect(Collectors.groupingBy(Function.identity(), Collectors.counting()))
+                .collect(Collectors.groupingBy(Function.identity()))
                 .entrySet()
                 .stream()
-                .sorted((es1, es2) -> es1.getValue() == es2.getValue() ? Integer.compare(es1.getKey(), es2.getKey()) : Long.compare(es2.getValue(), es1.getValue()))
-                .flatMap(entry -> LongStream.range(0, entry.getValue()).mapToObj(i -> entry.getKey()))
+                .sorted((es1, es2) -> es1.getValue() == es2.getValue() ? Integer.compare(es1.getKey(), es2.getKey()) : Integer.compare(es2.getValue().size(), es1.getValue().size()))
+                .flatMap(entry -> entry.getValue().stream())
                 .map(String::valueOf)
                 .collect(Collectors.joining(","));
-
-        //.forEach(System.out::print);
-
-
-        System.out.print(val);
     }
 
 }
