@@ -1,4 +1,4 @@
-package person.prashant.questions.interview;
+package person.prashant.questions.interview.lmr;
 
 import lombok.Builder;
 import lombok.Data;
@@ -12,7 +12,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 
-public class Question {
+public class LmrInterviewQuestion {
 
     public static void main(String[] args){
 
@@ -20,7 +20,7 @@ public class Question {
         List<TickerData> tickerDataList = new ArrayList<>();
 
         // Get the classloader to load the file from the classpath
-        ClassLoader classLoader = Question.class.getClassLoader();
+        ClassLoader classLoader = LmrInterviewQuestion.class.getClassLoader();
         try (InputStream is = classLoader.getResourceAsStream(csvFile);
              BufferedReader br = new BufferedReader(new InputStreamReader(is))) {
 

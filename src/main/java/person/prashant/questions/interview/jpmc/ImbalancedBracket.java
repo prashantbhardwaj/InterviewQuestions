@@ -1,13 +1,15 @@
-package person.prashant.questions.basic;
+package person.prashant.questions.interview.jpmc;
 
 import lombok.Builder;
 import lombok.Data;
+import person.prashant.companies.Jpmorgan;
 import person.prashant.utility.SolutionTester;
 
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 
+@Jpmorgan
 public class ImbalancedBracket {
 
     private static Map brackets= new HashMap();
